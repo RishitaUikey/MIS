@@ -1,0 +1,71 @@
+{% extends "staff/base.html" %}
+{% block page %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+        background: url('/static/images/home_col.jpg') no-repeat center center fixed;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 50px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 95%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 style="font-family: 'Broadway', cursive;padding-left: 45px;">Registeration form</h1>
+            <form  method="post">
+                {{form.as_p}}
+                <button type="submit" class="btn btn-primary form-control mt-5">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock page %}

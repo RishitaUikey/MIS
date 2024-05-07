@@ -1,0 +1,151 @@
+{% extends "staff/base.html" %}
+{% block page %}
+{% load static %}
+
+  <style>
+      body {
+          background-image: url("/static/images/bg(4).png");
+          background-size: cover; /* Cover the entire page */
+          background-position: center; /* Center the background image */
+      }
+      .image-padding {
+          padding-top: 20px; /* Add padding above the image */
+          padding-bottom: 10px; /* Reduce padding at the bottom of the image */
+      }
+      
+  </style>
+
+<body>
+<div class="container mx-0">       
+      <div class="row image-padding"> <!-- r1 with padding for image -->
+        <div class="col-md-2">   <!--r1c1-->
+                  <img src="https://w0.peakpx.com/wallpaper/107/650/HD-wallpaper-beauty-salon-vectors-stock-psd-beautician.jpg" class="mx-auto p-2" style="width: 1190px;height: 60%;" >                  
+                </div>
+              </div>
+            
+            <div class="row"> <!-- main row -->   
+              <div class="col"> <!-- c1 -->               
+                <div class="row"> 
+                  <div class="mx-auto p-2 center-title" style="width: 100%;"> <!-- Center the title -->
+                    <h4>Basic Details</h4>
+                    </div>
+                  <form>
+                    <div class="mb-3">
+                        <label for="nameInput" class="form-label">Name</label>
+                        <input type="text" id="nameInput" class="form-control" placeholder="Enter your full name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailInput" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mobileInput" class="form-label">Mobile Number</label>
+                        <input type="text" id="mobileInput" class="form-control" placeholder="Enter your mobile number">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="genderSelect" class="form-label">Gender</label>
+                        <select class="form-select" id="genderSelect">
+                            <option selected disabled>Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>                
+              </div>
+              </div>  
+            </div>
+            <div class="row"> <!-- r2 -->
+              <div class="mx-auto p-2 center-title" style="width: 100%;"> <!-- Center the title -->
+              <h4>KYC Form</h4>
+              </div>
+              <div class="mx-auto p-2" style="width: 1125px;">
+              <div class="mb-3">
+                
+                  <label for="formFile" class="form-label">Address proof</label>
+                  <input class="form-control" type="file" id="formFile">
+              </div>
+              <div class="mb-3">
+                  <label for="formFileMultiple" class="form-label">ID</label>
+                  <input class="form-control" type="file" id="formFileMultiple" multiple>
+              </div>
+              <div class="d-grid gap-2 d-md-block">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </div>                                   
+          </div>
+      </div>
+
+      <div class="col"> <!-- c2 -->  
+        <div class="row"> 
+            <div class="mx-auto p-2" style="width: 200px;"> <!-- Adjusted width for consistent padding -->
+                <h4>Time Schedule</h4>
+            </div>
+            <div class="table-responsive" style="padding: 0 20px;"> <!-- Added padding to the table-responsive div -->
+                <table class="table" style="width: 100%;"> <!-- Adjusted width for consistent padding -->
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Appointment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="mx-auto p-2" style="width: 100px;"> <!-- Adjusted width for consistent padding -->
+                <h4>Skills</h4>
+            </div>
+            <div class="table-responsive" style="padding: 0 20px;"> <!-- Added padding to the table-responsive div -->
+                <table class="table" style="width: 100%;"> <!-- Adjusted width for consistent padding -->
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Skills</th>
+                            <th scope="col">Experience</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>      
+        <div class="d-grid gap-2 d-md-block">
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </div> 
+    </div>
+    
+          
+            </div> <!-- c2 End--> 
+          </div> <!-- main row End -->  
+        </div> <!-- End of the container -->  
+          
+                
+{% endblock page %}

@@ -1,0 +1,97 @@
+{% extends "customer/base.html" %}
+{% load static %}
+{% block style %}
+<div class="container-fluid ">
+  <div class="row align-items-center text-left" id="back" style="height: 120vh; width: 103%;">
+    <div class="container ">
+      <div class="row">
+        <div class="col-4">
+          <div style="display: flex; justify-content: space-between; align-items: center; font-family: unset; color: #f7f8f9;  white-space: nowrap;">
+            <div>
+              <span style="display: inline-block; vertical-align: middle;padding-left: 90px; font-size: 60px; text-transform: capitalize; font-weight: bold; ">Find</span>
+              <span style="display: inline-block; font-family: 'Brush Script MT', cursive; color: #fcfeff; font-size: 85px; text-shadow: 1px 1px 2px #CCCCCC; vertical-align: middle; padding-left: 20px;"> Beauty</span>
+            </div>
+            <h1 style="display: inline-block;text-align: right; margin: 0; padding-left: 20px;padding-right: 200px; text-transform: capitalize; font-weight: bold; font-size: 60px;">And Define Yourself</h1>
+            <button type="submit" class="btn btn-primary" style="position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%); background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Book Now</button>
+          </div>          
+      </div>
+    </div>
+  </div>
+</div>
+{% if messages %}
+{% for i in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{i}}</strong> 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+<div class="row align-items-center text-center"  style="height : 100vh;  padding-top: 20px;">
+  <h1 style="font-family: 'Broadway', cursive;">OUR SERVICES</h1>
+  <div class="col">
+    
+    <img src="{% static 'images/spa_service(3).jpg' %}" alt="" height= 250px; width=274px;>
+    <h3>MakeUp Services</h3>
+  </div>
+  <div class="col ">
+    <img src="{% static 'images/spa_service(5).jpg' %}" alt="" height=250px; width=274px;>
+    <h4>Hair Styling Services</h4>
+  </div>
+  <div class="col">
+    <img src="{% static 'images/spa1.jpg' %}" alt="" height=250px, width=274px;>
+    <h4>Cosmetology Services</h4>
+  </div>
+  <div class="col">
+    <img src="{% static 'images/spa_service(1).jpg' %}" alt="" height=250px, width=274px;>
+    <h4>Pedicure Services</h4>
+  </div>
+</div>
+
+<div class="row align-items-center text-center"  style="height : 50px; padding-top: 100px;">
+  <div class="row">
+    <div class="col" >
+  <h1  style="font-family: 'Broadway', cursive;">WElCOME TO OUR SALON......</h1>
+  <div class="col" >
+    <div style="position: relative;">
+    <img src="{% static 'images/home_11.jpg' %}" alt="" height= 550px; width=1220px;>
+    <h3 style="position: absolute; top: 50%; left: 55%; transform: translate(-50%, -50%); color: rgb(255, 255, 255);font-family: 'Times New Roman', Times, serif; font-weight: bold; text-align: justify;">We believe in 
+      providing our valued clients with an elevated spa experience ,
+      and our Exclusive Membership is designed to offer you a host 
+      of special privileges and benefits.</h3>
+  </div>   
+</div>
+
+
+<div class="col">
+  <div class="card" style="width: 1220px; margin-right: 10px; padding-top: 20px; position: relative;">
+    <img src="{% static 'images/home_col.jpg' %}" class="card-img-top" alt="..." style="height: 100px; width: 100%;">
+    <div class="card-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+      <h2 class="card-title">.......THANK YOU......</h2>
+      <h6 class="card-text">visit again</h6>
+    </div>
+  </div>
+</div>
+
+
+{% comment %}
+<div class="row align-items-center text-center" style="height: 130vh; padding-top: 100px;">
+  <h1 style="font-family: 'Broadway', cursive;">Book Your Visit</h1>
+  <div class="col">
+    <div style="position: relative;">
+      <img src="{% static 'images/home_4.jpg' %}" alt="" height= 800px; width=1220px; style="display: block;">
+      <h1 style="position: absolute; top: 30%; left: 41%; transform: translate(-69%, -50%); color: white;font-family: 'Times New Roman', Times, serif; font-weight: bold;">Get Appointment With Best Quality Services</h1>
+      <button type="submit" class="btn btn-primary" style="position: absolute; top: 45%; left: 30%; transform: translate(-50%, -50%); background-color: rgb(255, 255, 255); color: black;">Book Now</button>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+{% endblock style %}
+{% block page %}
+
+
+
+
+
+
+
+{% endblock page %}

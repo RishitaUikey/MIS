@@ -1,0 +1,82 @@
+{% extends "customer/base.html" %}
+{% block style %}
+<style>
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      background: url('/static/images/home_col.jpg') no-repeat center center fixed;
+  }
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+</style>
+
+{% endblock style %}
+{% block page %}
+
+{% if messages %}
+{% for i in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{i}}</strong> 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+
+<h2 style="font-family: 'Broadway', cursive;padding-left: 550px;">Login</h2>
+<form method="POST" action='{% url "login" %}'>
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username" name='username' aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="Password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="Password" name='password' aria-describedby="passwordHelpInline">
+    </div>
+  <input type="submit" value="Login">
+</form>
+{% endblock page %}
+

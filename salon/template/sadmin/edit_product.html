@@ -1,0 +1,35 @@
+{% extends "sadmin/base.html" %}
+{% block page %}
+<div class="container text-center mt-5">
+    <div class="row ">
+        <div class="col">
+            <h1>Edit the Product</h1>
+            <form method='POST' enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" class="form-control visually-hidden" id="name" name='id' aria-describedby="emailHelp" value="{{pro.id}}"> 
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name='name' aria-describedby="emailHelp" value="{{pro.name}}">       
+                </div>
+                <div class="mb-3 ">    
+                    <label class="detail" for="form-label">Details</label>
+                    <textarea class="form-control" id="detail" name='detail' > {{pro.detail}} </textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="price" name='price' aria-describedby="emailHelp" value="{{pro.price}}">             
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Quantity</label>
+                    <input type="text" class="form-control" id="quantity" name='quantity' aria-describedby="emailHelp" value="{{pro.quantity}}">             
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" class="form-control" id="image" name='picture' aria-describedby="emailHelp">             
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock page %}
