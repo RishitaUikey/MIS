@@ -60,6 +60,7 @@
         <div class="col">
             <h1 style="font-family: 'Broadway', cursive;padding-left: 45px;">Registeration form</h1>
             <form  method="post">
+                {% csrf_token %}
                 {{form.as_p}}
                 <button type="submit" class="btn btn-primary form-control mt-5">Register</button>
             </form>

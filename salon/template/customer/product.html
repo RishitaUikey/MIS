@@ -21,8 +21,11 @@
           <div class="card-body">
             <h5 class="card-name">{{i.name}}</h5>
             <h5 class="card-price">Rs.{{i.price}}</h5>
-
             <h5 class="card-detail">Quantity:{{i.quantity}}</h5>
+            <form action="{% url 'add_to_cart' i.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary">Add to Cart</button>
+            </form>
           <a href="#" class="btn btn-primary">Order Now</a>
         </div>
       </div>

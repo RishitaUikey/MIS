@@ -8,9 +8,9 @@ class SignUpFrom(UserCreationForm):
     first_name=forms.CharField(label="", max_length=50, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'First Name'}))
     last_name=forms.CharField(label="", max_length=50, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Last name'}))
     
-    class meta:
+    class Meta:
         model = User
-        fields= ('username', 'first_name','last_name','email','password1','password2')
+        fields= ['username', 'first_name','last_name','email','password1','password2']
         
     def __init__(self, *args, **kwargs) :
         super(SignUpFrom, self).__init__(*args, **kwargs)
