@@ -24,3 +24,7 @@ class SignUpFrom(UserCreationForm):
         
         self.fields['password2'].widget.attrs['class']='form-control'
         self.fields['password2'].widget.attrs['placeholder']='Conform Password'
+
+# class custform(UserCreationForm):
+    
+    

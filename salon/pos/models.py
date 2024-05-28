@@ -3,19 +3,18 @@ from django.contrib.auth.models import User
 from product.models import product
 
 # Create your views here.
-class Order(models.Model):
+class order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product_order = models.ManyToManyField(product, through='OrderItem')
+    product_order = models.ManyToManyField(product, through='orderitem')
     created_at = models.DateTimeField(auto_now_add=True)
-    total_amount = models.DecimalField(max_digits=7, decimal_places=2)
+    total_amount = models.FloatField()
     
-    def __str__(self) :
-        return self.id
-    
-class OrderItem(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    # def __str__(self) :
+    #     return self.product_order.name
+       
+class orderitem(models.Model):
+    order = models.ForeignKey(order, on_delete=models.CASCADE)
     productorder = models.ForeignKey(product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     
-    def __str__(self) :
-        return self.order.id
+    

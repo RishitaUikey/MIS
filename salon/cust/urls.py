@@ -12,4 +12,6 @@ urlpatterns = [
     path('login/',login_user, name='login'), # url for login
     path('logout/',logout_user, name='logout'),
     path('register/',register_user, name='register'), # url for register
+    path('custprofile/',custprofile,name='custprofile'),
+    # path('custform/',custform, name='custform'),
 ]

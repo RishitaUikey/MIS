@@ -5,7 +5,7 @@ from staff.views import *
 
 urlpatterns = [
     path('', staffhome, name='staffhome'), # for the staff home page 
-    path('login/',login_user, name='login'), # url for login
-    path('logout/',logout_user, name='logout'),
+    path('login/',login_user, name='slogin'), # url for login
+    path('logout/',logout_user, name='slogout'),
     path('register/',register_user, name='register'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 from cust.forms import SignUpFrom
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 # landing page for customer 
@@ -69,3 +70,20 @@ def register_user(request):
             messages.success(request,('Registration Un-Successful, try again..'))
             return redirect('register')
     return render(request, 'customer/register.html',{'form': form})
+
+# Customer Profile page
+@login_required
+def userprofile(request):
+    return render(request, 'customer/userprofile.html')
+
+#custform
+@login_required
+def custprofile(request):
+    if request.method == 'POST':
+        form = customername(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('custprofile')
+    else:
+        form = customername()
+    return render(request, 'customer/custform.html',{'form':form})
