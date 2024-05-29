@@ -1,0 +1,40 @@
+{% extends "customer/base.html" %}
+{% load static %}
+{% block page %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Shopping Cart</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if order %}
+                        {% for item in order %}
+                        <tr>
+                            <td>{{ item.productorder.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>Rs. {{ item.productorder.price|floatformat:2 }}</td>
+                            <td>Rs. {{ item.productorder.totalprice|floatformat:2 }}</td>
+                            
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="4" class="text-center">Your cart is empty.</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4">
+            <h3>Total Amount: Rs.{{ price|floatformat:2 }}</h3>
+            <a href="" class="btn btn-primary">Proceed to Checkout</a>
+        </div>
+    </div>
+{% endblock page %}

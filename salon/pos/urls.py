@@ -4,6 +4,6 @@ from pos.views import *
 urlpatterns = [ 
        path('add_to_cart/<int:p_id>',add_to_cart,name='add_to_cart'),
        path('buynow/<int:p_id>',buynow,name='buynow'),
-       # path('cart',cart,name='cart'),
+       path('cart',cart,name='cart'),
                
 ]
