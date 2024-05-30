@@ -20,7 +20,7 @@
                             <td>{{ item.productorder.name }}</td>
                             <td>{{ item.quantity }}</td>
                             <td>Rs. {{ item.productorder.price|floatformat:2 }}</td>
-                            <td>Rs. {{ item.productorder.totalprice|floatformat:2 }}</td>
+                            <td>Rs. {{ item.total_price}}</td>
                             
                         </tr>
                         {% endfor %}
